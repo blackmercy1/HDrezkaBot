@@ -1,7 +1,18 @@
+using Newtonsoft.Json;
+
 namespace HDrezkaBot;
 
 public class BotConfigurationProvider
 {
-    private const string TOKEN = "6371141732:AAEy3ictmLnfU8NzqBvmNWv0gOznG0jAT1E";
-    public string TelegramToken => TOKEN;
+    public string TelegramToken => _token;
+    
+    private string _token;
+    private string _filePath;
+
+    public BotConfigurationProvider(string filePath)
+    {
+        _filePath = filePath;
+        string? jsonData = new StreamReader(_filePath).ReadToEnd();
+        _token = JsonConvert.DeserializeObject<string>(jsonData) ?? throw new Exception("Invalid token read");
+    }
 }

@@ -21,6 +21,6 @@ public class ConfigurationProvider
         SignInData = _dataFactory.CreateEmailData("blackmercy228@gmail.com", "pufj lvwi mrte rygt");
         TargetEmail = _dataFactory.CreateEmailData("mirror@hdrezka.org");  
         
-        TelegramTokenPath = "/Users/black_mercy/RiderProjects/HDrezkaBot/HDrezkaBot/Telegrampass.json";
+        TelegramTokenPath = "6371141732:AAEy3ictmLnfU8NzqBvmNWv0gOznG0jAT1E";
     }
 }

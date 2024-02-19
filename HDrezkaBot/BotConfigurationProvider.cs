@@ -12,7 +12,6 @@ public class BotConfigurationProvider
     public BotConfigurationProvider(string filePath)
     {
         _filePath = filePath;
-        string? jsonData = new StreamReader(_filePath).ReadToEnd();
-        _token = JsonConvert.DeserializeObject<string>(jsonData) ?? throw new Exception("Invalid token read");
+        _token = _filePath;
     }
 }
